@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import UpdatedComponent from "./withCounter";
 
 class HowerCounter extends Component {
   constructor() {
@@ -15,10 +16,12 @@ class HowerCounter extends Component {
   render() {
     return (
       <div>
-        <button onMouseOver={this.mouseOverHandler}>Clicked {this.state.count} time</button>
+        <button onMouseOver={this.mouseOverHandler}>
+          {this.props.name} hover me {this.state.count} time
+        </button>
       </div>
     );
   }
 }
 
-export default HowerCounter;
+export default UpdatedComponent(HowerCounter);
