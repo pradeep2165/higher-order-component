@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UpdatedComponent from "./withCounter";
+import withCounter from "./withCounter";
 
 class HowerCounter extends Component {
   render() {
@@ -12,4 +12,4 @@ class HowerCounter extends Component {
   }
 }
 
-export default UpdatedComponent(HowerCounter);
+export default withCounter(HowerCounter, 5);
