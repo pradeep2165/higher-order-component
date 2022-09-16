@@ -1,27 +1,17 @@
 import React, { Component } from "react";
-import UpdatedComponent from "./withCounter";
+import withCounter from "./withCounter";
 
 class ClickCounter extends Component {
-  constructor() {
-    super();
-    this.state = {
-      count: 0,
-    };
-  }
-  clickHandler = () => {
-    this.setState((prevState) => {
-      return { count: prevState.count + 1 };
-    });
-  };
   render() {
+    const { count, incrementCount } = this.props;
     return (
       <div>
-        <button onClick={this.clickHandler}>
-          {this.props.name} Click {this.state.count} times
+        <button onClick={incrementCount}>
+          {this.props.name} Click {count} times
         </button>
       </div>
     );
   }
 }
 
-export default UpdatedComponent(ClickCounter);
+export default withCounter(ClickCounter);

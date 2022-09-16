@@ -2,23 +2,11 @@ import React, { Component } from "react";
 import UpdatedComponent from "./withCounter";
 
 class HowerCounter extends Component {
-  constructor() {
-    super();
-    this.state = {
-      count: 0,
-    };
-  }
-  mouseOverHandler = () => {
-    this.setState((prevState) => {
-      return { count: prevState.count + 1 };
-    });
-  };
   render() {
+    const { count, incrementCount } = this.props;
     return (
-      <div>
-        <button onMouseOver={this.mouseOverHandler}>
-          {this.props.name} hover me {this.state.count} time
-        </button>
+      <div style={{ margin: "20px" }}>
+        <button onMouseOver={incrementCount}>hover me {count} time</button>
       </div>
     );
   }

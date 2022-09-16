@@ -6,7 +6,7 @@ import HowerCounter from "./components/HowerCounter";
 function App() {
   return (
     <div className="App">
-      <ClickCounter />
+      <ClickCounter name="pradeep" />
       <HowerCounter />
     </div>
   );
